@@ -1,0 +1,88 @@
+:root {
+    --color-bg-dark: #131425;
+    --color-bg-dark-60: rgba(19,20,37,0.6);
+    --color-bg-dark-80: rgba(19,20,37,0.8);
+    --color-highlight1: #3d88f1;
+    --color-highlight1_dark: #17345c;
+    --color-highlight1_light: #84b7ff;
+    --color-highlight2: #ca4f09;
+    --color-highlight2_dark:  #6d2b05;
+    --color-highlight2_light: #ff7d32;
+    --color-highlight3: #27ae72;
+    --color-highlight3_dark:  #135739;
+    --color-highlight3_light: #39ffa7;
+    --color-font-light: #ecf3fa;
+    --color-font-dark: #253148;
+}
+
+/*a:active,*/
+a:active,
+a:focus,
+input:focus {
+    border: 0;
+    outline: 0;
+}
+
+input::-moz-focus-inner, button::-moz-focus-inner { 
+  border: 0; 
+}
+
+html {
+    background-color: var(--color-bg-dark);
+    font: 16px 'Open Sans', sans-serif;
+    line-height: 1.3em;
+    color: var(--color-font-light);
+    height:100%;
+    background-image: url("bg.JPG");
+    background-repeat: repeat-x;
+    background-size: cover;
+    overflow: hidden;
+}
+
+body {
+    margin:0;
+    padding: 5% 0 5% 0;
+    -moz-user-select: none;
+}
+
+.items {
+   padding: 5% 0 5% 0;
+   white-space: nowrap; 
+   overflow-x: scroll;
+}
+
+/****
+ * HIDE SCROLLBAR ON ELEMENT
+***/
+.items { overflow: -moz-scrollbars-none; }
+.items::-webkit-scrollbar { width: 0 !important }
+.items { -ms-overflow-style: none; }
+
+.item {
+    width: 200px;
+    height: 350px;
+    margin: 0 auto 60px;
+    position: relative;
+    perspective: 600px;
+    display: inline-block;
+    margin-left: -45px;
+}
+
+.inside {
+    transform: rotateY(-45deg);
+    height:350px;
+}
+
+/*eventually content inside the rotated element*/
+.content {
+    transform: rotateY(-45deg);
+  }
+
+.items {
+    transition: all 1s;
+    cursor: move;
+}
+
+.active {
+      transform: scale(1.01);
+  }
